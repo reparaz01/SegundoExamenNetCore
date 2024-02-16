@@ -1,0 +1,41 @@
+﻿@model List<Comic>
+
+
+<div class="container">
+    <h1 class="text-center">Comics SQL y Oracle</h1>
+    <br />
+
+    <p>
+        <a asp-controller="Comics" asp-action="Create" class="btn btn-primary btn-full-width"> Crear Comic (Con Procedure)</a>
+    </p>
+    <p>
+        <a asp-controller="Comics" asp-action="CreateLambda" class="btn btn-primary btn-full-width"> Crear Comic (Sin Procedure)</a>
+    </p>
+
+    <p>
+        <a asp-controller="Comics" asp-action="Find" class="btn btn-secondary btn-full-width"> Buscar Comic</a>
+    </p>
+
+    <br />
+    <div class="row">
+        @foreach (var comic in Model)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="@comic.Imagen" class="card-img-top" alt="..." style="width: 407px; height: 550px;">
+                    <div class="card-body">
+                        <h5 class="card-title">@comic.Nombre</h5>
+                        <p class="card-text">@comic.Descripcion</p>
+                        <a asp-controller="Comics" asp-action="Delete" asp-route-id="@comic.IdComic" class="btn btn-danger btn-full-width">ELIMINAR</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<style>
+    .btn-full-width {
+        width: 100%;
+    }
+</style>

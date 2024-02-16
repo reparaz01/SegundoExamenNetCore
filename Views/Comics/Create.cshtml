@@ -1,0 +1,42 @@
+﻿<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-6">
+
+
+            <h1 class="text-center">Crear Comic con Procedure</h1>
+
+            <p class="text-center">
+                <a asp-controller="Comics" asp-action="Index">
+                   Volver al Inicio
+                </a>
+            </p>
+
+            <form method="post">
+
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre:</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" />
+                </div>
+
+                <div class="mb-3">
+                    <label for="imagen" class="form-label">Imagen:</label>
+                    <input type="text" class="form-control" id="imagen" name="imagen" />
+                </div>
+
+                <div class="mb-3">
+                    <label for="descripcion" class="form-label">Descripcion:</label>
+                    <input type="text" class="form-control" id="descripcion" name="descripcion" />
+                </div>
+
+                <br />
+
+                <button type="submit" class="btn btn-dark d-block mx-auto">
+                    Crear Comic
+                </button>
+            </form>
+
+            <h1> @ViewData["MENSAJE"]</h1>
+
+        </div>
+    </div>
+</div>

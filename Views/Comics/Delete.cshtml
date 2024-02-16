@@ -1,0 +1,25 @@
+﻿@model Comic
+
+<h1 class= "text-center"> ¿Quieres eliminar este Comic? </h1>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <img src="@Model.Imagen" class="card-img-top" alt="Comic Image">
+                <div class="card-body">
+                    <h5 class="card-title">@Model.Nombre</h5>
+                    <p class="card-text">@Model.Descripcion</p>
+                </div>
+                <div class="card-footer">
+                    <form asp-controller="Comics" asp-action="DeleteConfirmed" method="post">
+                        <input type="hidden" name="id" value="@Model.IdComic" />
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-secondary btn-lg">Sí</button>
+                            <a asp-controller="Comics" asp-action="Index" class="btn btn-secondary btn-lg">No</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

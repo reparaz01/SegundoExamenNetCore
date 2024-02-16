@@ -1,0 +1,28 @@
+﻿@model List<Comic>
+
+
+<div class="container">
+    <p>
+        <a asp-controller="Comics" asp-action="Index">
+            Volver
+        </a>
+    </p>
+
+    <h1>
+        Selecciona Un comic para ver sus Detalles
+    </h1>
+
+    <form method="post">
+        <label>Lista de Comics</label>
+        <select name="idComic" class="form-control">
+            @foreach (var comic in Model)
+            {
+                <option value="@comic.IdComic">@comic.Nombre</option>
+            }
+        </select>
+        <br>
+        <button type="submit" class="btn btn-warning">
+            Mostrar Detalles
+        </button>
+    </form>
+    <div>
